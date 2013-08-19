@@ -1,0 +1,1 @@
+gxemul.exe -E qemu_mips -M 64 ../build/rain.elf

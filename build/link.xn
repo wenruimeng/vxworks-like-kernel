@@ -1,0 +1,100 @@
+/*! Janson(http://www.gandancing.com) 2011-2012
+ *
+ *\file		link.xn
+ *\brief		
+ *\details	
+ *
+ *\author	Janson
+ *\version	
+ *\date		04Jan12
+ *
+ *\warning	
+ *
+ *\history \arg	30Jan12, Janson, Create the file
+ *	modify from MIPS port for uC/OS-II by Michael Anburaj
+ *  Legal Declaration: it is for studying only.
+ */
+
+OUTPUT_FORMAT("elf32-bigmips", "elf32-bigmips", "elf32-littlemips")
+OUTPUT_ARCH(mips)
+
+/**** Start point ****/
+ENTRY(_start)			/* Entry point of application		*/
+
+MEMORY
+{
+    ram (wx) : ORIGIN = 0x80000000, LENGTH = 64M
+}
+
+SECTIONS
+{
+  /**** Code and read-only data ****/
+
+  .text 0x80100000 :
+  {
+    _ftext = ABSOLUTE(.) ;	/* Start of code and read-only data	*/
+    init.o (.text) 		/* Entry point				*/
+    *(.text)
+    _ecode = ABSOLUTE(.) ;	/* End of code				*/
+
+    *(.rodata)
+
+    . = ALIGN(8);
+    _etext = ABSOLUTE(.);	/* End of code and read-only data	*/
+  } > ram
+
+  /**** Initialised data ****/
+
+  .data :
+  {
+    _fdata = ABSOLUTE(.);	/* Start of initialised data		*/
+    *(.data)
+   
+    . = ALIGN(8);
+
+    _gp = ABSOLUTE(. + 0x7ff0); /* Base of small data			*/
+
+    *(.lit8) 
+    *(.lit4) 
+    *(.sdata) 
+
+    . = ALIGN(8);
+
+    _edata  = ABSOLUTE(.);	/* End of initialised data		*/
+  } > ram
+
+  /**** Uninitialised data ****/
+
+  _fbss = .;			/* Start of uninitialised data		*/
+
+  .sbss : 
+  { 
+    *(.sbss) 
+    *(.scommon)
+  }
+  .bss :
+  {
+    *(.bss)
+    *(COMMON)
+
+    /* Allocate room for stack */
+    .   =  ALIGN(8) ;
+    _freemem = .;
+  }
+
+  _end = . ;			/* End of unitialised data		*/
+
+  .gptab.sdata : { *(.gptab.data) *(.gptab.sdata) }
+  .gptab.sbss : { *(.gptab.bss) *(.gptab.sbss) }
+
+  /DISCARD/ :
+  {
+    *(.reginfo)
+  }
+
+  PROVIDE(etext = _etext);
+  PROVIDE (edata = .);
+  PROVIDE (end = .);
+}
+
+

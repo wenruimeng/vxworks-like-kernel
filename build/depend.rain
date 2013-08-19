@@ -1,0 +1,73 @@
+consol.o: ./../src/board/gxemul/consol.c ../inc/arch/mips/sysdefs.h \
+  ../inc/board/gxemul/atlas.h ../inc/arch/mips/mips.h \
+  ../inc/arch/mips/archdefs.h ../inc/board/gxemul/consol.h \
+  ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h ../inc/lib/stdlib.h
+frmwrk.o: ./../src/board/gxemul/frmwrk.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/task.h ../inc/sem.h ../inc/msgq.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h ../inc/board/gxemul/consol.h \
+  ../inc/arch/mips/mips.h ../inc/board/gxemul/atlas.h
+sysLib.o: ./../src/board/gxemul/sysLib.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/task.h ../inc/sem.h ../inc/msgq.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h ../inc/board/gxemul/atlas.h ../inc/arch/mips/mips.h
+libc.o: ./../src/lib/libc.c ../inc/arch/mips/sysdefs.h \
+  ../inc/lib/string.h ../inc/lib/ctype.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/errno.h ../inc/board/gxemul/consol.h
+demo.o: ./../src/test/demo.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/task.h ../inc/sem.h ../inc/msgq.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+s3_sem1.o: ./../src/test/s3_sem1.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/task.h ../inc/sem.h ../inc/msgq.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+s3_sem2.o: ./../src/test/s3_sem2.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/task.h ../inc/sem.h ../inc/msgq.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+s4_msgq2.o: ./../src/test/s4_msgq2.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/task.h ../inc/sem.h ../inc/msgq.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+s7_inversion1.o: ./../src/test/s7_inversion1.c \
+  ../inc/board/gxemul/includes.h ../inc/arch/mips/sysdefs.h \
+  ../inc/arch/mips/archdefs.h ../inc/board/gxemul/frmwrk.h \
+  ../inc/dllList.h ../inc/kernel.h ../inc/task.h ../inc/sem.h \
+  ../inc/msgq.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+s7_inversion2.o: ./../src/test/s7_inversion2.c \
+  ../inc/board/gxemul/includes.h ../inc/arch/mips/sysdefs.h \
+  ../inc/arch/mips/archdefs.h ../inc/board/gxemul/frmwrk.h \
+  ../inc/dllList.h ../inc/kernel.h ../inc/task.h ../inc/sem.h \
+  ../inc/msgq.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+cache_s.o: ./../src/arch/mips/cache_s.S ../inc/arch/mips/sysdefs.h \
+  ../inc/arch/mips/mips.h ../inc/arch/mips/archdefs.h \
+  ../inc/arch/mips/cache.h
+excep_s.o: ./../src/arch/mips/excep_s.S ../inc/arch/mips/sysdefs.h \
+  ../inc/arch/mips/mips.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/arch/mips/cache.h \
+  ../inc/board/gxemul/atlas.h
+init.o: ./../src/board/gxemul/init.S ../inc/arch/mips/sysdefs.h \
+  ../inc/arch/mips/mips.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h
+libc_s.o: ./../src/lib/libc_s.S ../inc/arch/mips/sysdefs.h \
+  ../inc/arch/mips/mips.h ../inc/arch/mips/archdefs.h

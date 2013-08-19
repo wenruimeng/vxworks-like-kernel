@@ -1,0 +1,299 @@
+excArchLib.o: ./../src/arch/mips/private/excArchLib.c \
+  ../inc/board/gxemul/includes.h ../inc/arch/mips/sysdefs.h \
+  ../inc/arch/mips/archdefs.h ../inc/board/gxemul/frmwrk.h \
+  ../inc/dllList.h ../inc/kernel.h ../inc/private/kernel_priv.h \
+  ../inc/private/classLib.h ../inc/private/tickLib.h \
+  ../inc/private/queueLib.h ../inc/private/qFifoLib.h \
+  ../inc/private/qPriListLib.h ../inc/private/memPartLib.h \
+  ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h ../inc/arch/mips/private/esfMips.h \
+  ../inc/arch/mips/cache.h
+kernelLib.o: ./../src/rain/kernelLib.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/private/kernel_priv.h ../inc/private/classLib.h \
+  ../inc/private/tickLib.h ../inc/private/queueLib.h \
+  ../inc/private/qFifoLib.h ../inc/private/qPriListLib.h \
+  ../inc/private/memPartLib.h ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+kernelQLib.o: ./../src/rain/kernelQLib.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/private/kernel_priv.h ../inc/private/classLib.h \
+  ../inc/private/tickLib.h ../inc/private/queueLib.h \
+  ../inc/private/qFifoLib.h ../inc/private/qPriListLib.h \
+  ../inc/private/memPartLib.h ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+msgQLib.o: ./../src/rain/msgQLib.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/private/kernel_priv.h ../inc/private/classLib.h \
+  ../inc/private/tickLib.h ../inc/private/queueLib.h \
+  ../inc/private/qFifoLib.h ../inc/private/qPriListLib.h \
+  ../inc/private/memPartLib.h ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+semBLib.o: ./../src/rain/semBLib.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/private/kernel_priv.h ../inc/private/classLib.h \
+  ../inc/private/tickLib.h ../inc/private/queueLib.h \
+  ../inc/private/qFifoLib.h ../inc/private/qPriListLib.h \
+  ../inc/private/memPartLib.h ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+semCLib.o: ./../src/rain/semCLib.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/private/kernel_priv.h ../inc/private/classLib.h \
+  ../inc/private/tickLib.h ../inc/private/queueLib.h \
+  ../inc/private/qFifoLib.h ../inc/private/qPriListLib.h \
+  ../inc/private/memPartLib.h ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+semLib.o: ./../src/rain/semLib.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/private/kernel_priv.h ../inc/private/classLib.h \
+  ../inc/private/tickLib.h ../inc/private/queueLib.h \
+  ../inc/private/qFifoLib.h ../inc/private/qPriListLib.h \
+  ../inc/private/memPartLib.h ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+semMLib.o: ./../src/rain/semMLib.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/private/kernel_priv.h ../inc/private/classLib.h \
+  ../inc/private/tickLib.h ../inc/private/queueLib.h \
+  ../inc/private/qFifoLib.h ../inc/private/qPriListLib.h \
+  ../inc/private/memPartLib.h ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+taskLib.o: ./../src/rain/taskLib.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/private/kernel_priv.h ../inc/private/classLib.h \
+  ../inc/private/tickLib.h ../inc/private/queueLib.h \
+  ../inc/private/qFifoLib.h ../inc/private/qPriListLib.h \
+  ../inc/private/memPartLib.h ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+testQueue.o: ./../src/rain/testQueue.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/private/kernel_priv.h ../inc/private/classLib.h \
+  ../inc/private/tickLib.h ../inc/private/queueLib.h \
+  ../inc/private/qFifoLib.h ../inc/private/qPriListLib.h \
+  ../inc/private/memPartLib.h ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+tickLib.o: ./../src/rain/tickLib.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/private/kernel_priv.h ../inc/private/classLib.h \
+  ../inc/private/tickLib.h ../inc/private/queueLib.h \
+  ../inc/private/qFifoLib.h ../inc/private/qPriListLib.h \
+  ../inc/private/memPartLib.h ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+dllList.o: ./../src/utils/dllList.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/private/kernel_priv.h ../inc/private/classLib.h \
+  ../inc/private/tickLib.h ../inc/private/queueLib.h \
+  ../inc/private/qFifoLib.h ../inc/private/qPriListLib.h \
+  ../inc/private/memPartLib.h ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+qFifoLib.o: ./../src/utils/qFifoLib.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/private/kernel_priv.h ../inc/private/classLib.h \
+  ../inc/private/tickLib.h ../inc/private/queueLib.h \
+  ../inc/private/qFifoLib.h ../inc/private/qPriListLib.h \
+  ../inc/private/memPartLib.h ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+qJobLib.o: ./../src/utils/qJobLib.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/private/kernel_priv.h ../inc/private/classLib.h \
+  ../inc/private/tickLib.h ../inc/private/queueLib.h \
+  ../inc/private/qFifoLib.h ../inc/private/qPriListLib.h \
+  ../inc/private/memPartLib.h ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+qPriListLib.o: ./../src/utils/qPriListLib.c \
+  ../inc/board/gxemul/includes.h ../inc/arch/mips/sysdefs.h \
+  ../inc/arch/mips/archdefs.h ../inc/board/gxemul/frmwrk.h \
+  ../inc/dllList.h ../inc/kernel.h ../inc/private/kernel_priv.h \
+  ../inc/private/classLib.h ../inc/private/tickLib.h \
+  ../inc/private/queueLib.h ../inc/private/qFifoLib.h \
+  ../inc/private/qPriListLib.h ../inc/private/memPartLib.h \
+  ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+queueLib.o: ./../src/utils/queueLib.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/private/kernel_priv.h ../inc/private/classLib.h \
+  ../inc/private/tickLib.h ../inc/private/queueLib.h \
+  ../inc/private/qFifoLib.h ../inc/private/qPriListLib.h \
+  ../inc/private/memPartLib.h ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+classLib.o: ./../src/os/classLib.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/private/kernel_priv.h ../inc/private/classLib.h \
+  ../inc/private/tickLib.h ../inc/private/queueLib.h \
+  ../inc/private/qFifoLib.h ../inc/private/qPriListLib.h \
+  ../inc/private/memPartLib.h ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+memPartLib.o: ./../src/os/memPartLib.c ../inc/board/gxemul/includes.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/archdefs.h \
+  ../inc/board/gxemul/frmwrk.h ../inc/dllList.h ../inc/kernel.h \
+  ../inc/private/kernel_priv.h ../inc/private/classLib.h \
+  ../inc/private/tickLib.h ../inc/private/queueLib.h \
+  ../inc/private/qFifoLib.h ../inc/private/qPriListLib.h \
+  ../inc/private/memPartLib.h ../inc/arch/mips/private/excMipsLib.h \
+  ../inc/arch/mips/private/regsMips.h ../inc/private/taskLib.h \
+  ../inc/task.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/private/semLib.h ../inc/sem.h ../inc/private/semBLib.h \
+  ../inc/private/semMLib.h ../inc/private/semCLib.h \
+  ../inc/private/qJobLib.h ../inc/private/msgQLib.h ../inc/msgq.h \
+  ../inc/private/kernelLib.h ../inc/arch/mips/private/excArchLib.h \
+  ../inc/private/kernelQLib.h ../inc/lib/stdio.h \
+  E:/Tornado2.2.1-mips/host/x86-win32/lib/gcc-lib/mips-wrs-vxworks/2.96-mips3264-010729/include/stdarg.h \
+  ../inc/lib/string.h
+excALib.o: ./../src/arch/mips/private/excALib.S \
+  ../inc/arch/mips/archdefs.h ../inc/arch/mips/sysdefs.h \
+  ../inc/arch/mips/mips.h ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/arch/mips/private/esfMips.h ../inc/arch/mips/private/regsMips.h
+kernelALib.o: ./../src/rain/kernelALib.S ../inc/arch/mips/archdefs.h \
+  ../inc/arch/mips/sysdefs.h ../inc/arch/mips/mips.h \
+  ../inc/arch/mips/private/taskMipsLib.h \
+  ../inc/arch/mips/private/esfMips.h ../inc/arch/mips/private/regsMips.h

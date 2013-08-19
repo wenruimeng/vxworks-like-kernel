@@ -1,0 +1,204 @@
+windExit:
+	lw      t0, intCnt		/* if intCnt == 0 we're from task */
+	bne     zero, t0, windExitInt	/* else we're exiting interrupt code */
+
+	/* FALL THRU TO CHECK THAT CURRENT TASK IS STILL HIGHEST */
+
+/*******************************************************************************
+*
+* checkTaskSwitch - check to see if taskIdCurrent is still highest task
+*
+* We arrive at this code either as the result of falling thru from windExit,
+* or if we have finished emptying the work queue.  We compare taskIdCurrent
+* with the highest ready task on the ready queue.  If they are same we
+* go to a routine to check the work queue.  If they are different and preemption
+* is allowed we branch to a routine to make sure that taskIdCurrent is really
+* ready (it may have blocked with preemption disabled).  If they are different
+* we save the context of taskIdCurrent and fall thru to reschedule.
+*/
+
+checkTaskSwitch:
+	lw	t0, taskIdCurrent		/* move taskIdCurrent into t0 */
+	lw	t1, readyQHead			/* move readyQHead into t1 */
+	beq	t0, t1, checkWorkQ		/* if same then time to leave */
+
+	lw	t1, WIND_TCB_LOCK_CNT(t0)	/* is task preemption allowed */
+	bne	zero, t1, checkTaskReady	/* if no, check task is ready */
+
+saveTaskContext:
+	lw 	t1, errno
+	sw	t1, WIND_TCB_ERRNO(t0)		/* save errno */
+	sw	ra, WIND_TCB_PC(t0)	   	/* save ra to be new PC 
+						   after call to here */
+	HAZARD_VR5400
+	mfc0	t1, C0_SR			/* read SR */
+	SW	sp, WIND_TCB_SP(t0)	   	/* save stack pointer */
+	sw      t1, WIND_TCB_SR(t0)     	/* save SR in entirety */
+						/* load saved registers */
+						/* less volatile t0-t9,a0-a3 */
+	SW	zero, WIND_TCB_V0(t0)	   	/* windExit returns OK */
+	mflo	t2
+	SW	t2, WIND_TCB_LO(t0)
+	mfhi	t2
+	SW	t2, WIND_TCB_HI(t0)
+	SW	s0, WIND_TCB_S0(t0)
+	SW	s1, WIND_TCB_S1(t0)
+	SW	s2, WIND_TCB_S2(t0)
+	SW	s3, WIND_TCB_S3(t0)
+	SW	s4, WIND_TCB_S4(t0)
+	SW	s5, WIND_TCB_S5(t0)    
+	SW	s6, WIND_TCB_S6(t0)
+	SW	s7, WIND_TCB_S7(t0)
+	SW	s8, WIND_TCB_S8(t0)
+
+	/* FALL THRU TO RESCHEDULE */
+
+/*******************************************************************************
+*
+* reschedule - rescheduler for VxWorks kernel
+*
+* This routine is called when either intExit, or windExit, thinks the
+* context might change.  All of the contexts of all of the tasks are
+* accurately stored in the task control blocks when entering this function.
+* The status register has interrupts UNLOCKED upon entry to this routine.
+*
+* The register t0 must contain the value of taskIdCurrent at the entrance to
+* this routine.
+*
+* At the conclusion of this routine, taskIdCurrent will equal the highest
+* priority task eligible to run, and the kernel work queue will be empty.
+* If a context switch to a different task is to occur, then the installed
+* switch hooks are called.
+*
+* For non-R3k processors (MIPS 3 ISA & higher) the incoming context is 
+* switched to using an 'eret' and the EPC. This is done to ensure the
+* internal ll-sc bit is cleared.
+*
+* NOMANUAL
+
+* void reschedule ()
+
+*/
+
+	.ent	reschedule
+reschedule:
+	lw	t1, readyQHead			/* get highest task to t1 */
+	beq	zero, t1, idle			/* idle if nobody ready */
+
+switchTasks:
+	sw	t1, taskIdCurrent		/* update taskIdCurrent */
+
+	/* t1 has highest task*/
+	/* t0 has previous task */
+
+	lhu	t2, WIND_TCB_SWAP_IN(t1)	/* swap in hook mask into t1 */
+	lhu	t3, WIND_TCB_SWAP_OUT(t0)	/* swap out hook mask into t2 */
+	or	t3, t3, t2			/* or in swap out hook mask */
+	bne	zero, t3, doSwapHooks		/* any swap hooks to do */
+	lw	t2, taskSwitchTable		/* any global switch hooks? */
+	bne	zero, t2, doSwitchHooks		/* any switch hooks to do */
+
+dispatch:
+
+	lw	t1, taskIdCurrent		/* can't be sure with hooks */
+	lw	t0, WIND_TCB_ERRNO(t1)		/* restore errno */
+	sw	t0, errno
+
+#ifndef WV_INSTRUMENTATION
+
+        LW	sp, WIND_TCB_SP(t1)             /* restore task sp */
+        LW	a0, WIND_TCB_A0(t1)             /* restore saved registers */
+        LW	a1, WIND_TCB_A1(t1)
+        LW      a2, WIND_TCB_A2(t1)
+        LW      a3, WIND_TCB_A3(t1)
+        LW      v0, WIND_TCB_V0(t1)
+        LW      v1, WIND_TCB_V1(t1)
+        LW      t2, WIND_TCB_LO(t1)             /* use t2 to restore LO & HI */
+        mtlo    t2
+        LW      t2, WIND_TCB_HI(t1)
+        mthi    t2
+        LW      t3, WIND_TCB_T3(t1)
+        LW      t4, WIND_TCB_T4(t1)
+        LW      t5, WIND_TCB_T5(t1)
+        LW      t6, WIND_TCB_T6(t1)
+        LW      t7, WIND_TCB_T7(t1)
+        LW      s0, WIND_TCB_S0(t1)
+        LW      s1, WIND_TCB_S1(t1)
+        LW      s2, WIND_TCB_S2(t1)
+        LW      s3, WIND_TCB_S3(t1)
+        LW      s4, WIND_TCB_S4(t1)
+        LW      s5, WIND_TCB_S5(t1)
+        LW      s6, WIND_TCB_S6(t1)
+        LW      s7, WIND_TCB_S7(t1)
+        LW      t8, WIND_TCB_T8(t1)
+        LW      t9, WIND_TCB_T9(t1)
+        LW      s8, WIND_TCB_S8(t1)
+        LW      ra, WIND_TCB_RA(t1)             /* restore return addr */
+
+#endif /* !WV_INSTRUMENTATION */
+
+	HAZARD_VR5400
+	mfc0	t0, C0_SR 
+	li	t2, ~SR_INT_ENABLE
+	and	t2, t2, t0
+	mtc0	t2, C0_SR			/* LOCK INTERRUPTS */
+	HAZARD_INTERRUPT
+	lw	k0, workQIsEmpty		/* if work q is not empty */
+	lw	k1, WIND_TCB_SR(t1)		/* k1 = current SR */
+	beq	zero, k0, doWorkUnlock		/* then do work while */
+.
+./* 略去部分代码 */
+.
+......
+noInst3:
+        /* windview instrumentation - END */
+                                                /* load register set */
+        LW      sp, WIND_TCB_SP(t1)             /* restore task sp */
+        LW      a0, WIND_TCB_A0(t1)             /* restore saved registers */
+        LW      a1, WIND_TCB_A1(t1)
+        LW      a2, WIND_TCB_A2(t1)
+        LW      a3, WIND_TCB_A3(t1)
+        LW      v0, WIND_TCB_V0(t1)
+        LW      v1, WIND_TCB_V1(t1)
+        LW      t2, WIND_TCB_LO(t1)             /* use t2 to restore LO & HI */
+        mtlo    t2
+        LW      t2, WIND_TCB_HI(t1)
+        mthi    t2
+        LW      t3, WIND_TCB_T3(t1)
+        LW      t4, WIND_TCB_T4(t1)
+        LW      t5, WIND_TCB_T5(t1)
+        LW      t6, WIND_TCB_T6(t1)
+        LW      t7, WIND_TCB_T7(t1)
+        LW      s0, WIND_TCB_S0(t1)
+        LW      s1, WIND_TCB_S1(t1)
+        LW      s2, WIND_TCB_S2(t1)
+        LW      s3, WIND_TCB_S3(t1)
+        LW      s4, WIND_TCB_S4(t1)
+        LW      s5, WIND_TCB_S5(t1)
+        LW      s6, WIND_TCB_S6(t1)
+        LW      s7, WIND_TCB_S7(t1)
+        LW      t8, WIND_TCB_T8(t1)
+        LW      t9, WIND_TCB_T9(t1)
+        LW      s8, WIND_TCB_S8(t1)
+        LW      ra, WIND_TCB_RA(t1)             /* restore return addr */
+
+#endif /* WV_INSTRUMENTATION */
+	.set	noreorder
+
+	sw	zero, kernelState		/* release kernel mutex */
+	lw	k0, WIND_TCB_PC(t1)		/* k0 =  return address */
+	.set	noat
+	LW	AT, WIND_TCB_AT(t1)		/* restore assembler temp */
+	LW	t2, WIND_TCB_T2(t1)		/* restore temp 2 */
+	LW	t0, WIND_TCB_T0(t1)		/* restore temp 0 */
+	LW	t1, WIND_TCB_T1(t1)		/* restore temp 1 */
+#ifdef _WRS_R3K_EXC_SUPPORT
+	j	k0			/* context switch */
+	mtc0	k1, C0_SR		/* restore status register */
+#else
+        mtc0    k0, C0_EPC		/* set EPC with incoming task's PC */
+        ori     k1, SR_EXL		/* set EXL to disable int's */
+        mtc0    k1, C0_SR		/* restore status register */
+        HAZARD_CP_WRITE
+        eret				/* context switch */
+#endif
