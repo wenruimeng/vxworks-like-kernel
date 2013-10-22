@@ -1,10 +1,13 @@
 vxworks-like-kernel
 ===================
 
+QQ讨论群：2749 83126 （加入请注名 vxworks）
+
 A little kernel like vxworks with full of features. Origin release at http://code.google.com/p/vxworks-like-kernel/
 Introduce at http://www.gandancing.com/archive/40.html  
 
-=Main Discription=
+Main Discription
+===
 
 A little real-time kernel for learning Vxworks, which has functions of
    * rt task (create/delay/delete)
@@ -12,19 +15,23 @@ A little real-time kernel for learning Vxworks, which has functions of
    * message box.
 It can run on gxemul mips. You can use some classic test like s7_inversion1.c for it too.
 
-==Some links about it.==
+Some links about it.
+====
    * [http://www.gandancing.com/archive/40.html]
    * [http://www.cnblogs.com/gandancing/archive/2012/03/21/2410844.html]
 
-=招募开发者=
+招募开发者
+==
 
-==前言==
+前言
+====
 
 最近观察发现，论坛的vxworks版块还是有一些火的。<br/>
 很多同学对vxworks内核的探究的脚步还是没有停止的。<br/>
 实时内核到底有多神秘，有多难？——告诉你，其实内核调度部分才5000行代码不到。<br/>
 
-==功能==
+功能
+====
 
 两年前为了公司vxworks的培训，自己翻看vxworks的代码学习并写了当时，也是现在的vxworks-like-kernel版本。（大概7000行代码）
 
