@@ -3,14 +3,14 @@ ENDIAN    = EB
 DEBUG     = 0
 
 #HOST = CYGWIN
-HOST = VXWORKS
+#HOST = VXWORKS
+HOST = LINUX
 
-ifeq ($(HOST),CYGWIN)
-CC        = mips-elf-gcc.exe
-LD        = mips-elf-ld.exe
-AR        = mips-elf-ar.exe
-OBJCOPY   = mips-elf-objcopy.exe
-OBJDUMP   = mips-elf-objdump.exe
+ifeq ($(HOST),LINUX)
+CC        = mipsisa32-elf-gcc
+LD        = mipsisa32-elf-ld
+OBJCOPY   = mipsisa32-elf-objcopy
+OBJDUMP   = mipsisa32-elf-objdump
 else
 CC        = ccmips
 LD        = ldmips
@@ -39,7 +39,7 @@ INCLUDE   = -I$(INCDIR)/lib -I$(INCDIR)/arch/mips -I$(INCDIR)/arch/mips/private 
             -I$(INCDIR)/board/gxemul -I$(INCDIR)/arch  -I$(INCDIR)/board -I$(INCDIR) 
 
 W_OPTS    = -Wimplicit -Wformat
-CC_OPTS   = -c -O2 -$(ENDIAN) $(INCLUDE) -D$(ENDIAN) -mips32 -fno-builtin $(W_OPTS) -DKERNEL
+CC_OPTS   = -G0 -g -c -$(ENDIAN) $(INCLUDE) -D$(ENDIAN) -mips32 -fno-builtin $(W_OPTS) -DKERNEL
 CC_OPTS_A = $(CC_OPTS) -D_ASSEMBLER_
 
 # earlier it was -oformat instead of --oformat

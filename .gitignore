@@ -15,3 +15,8 @@
 *.exe
 *.out
 *.app
+
+rain.*
+z.txt
+depend.kernel
+
