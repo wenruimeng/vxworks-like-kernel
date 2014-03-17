@@ -8,8 +8,9 @@ Introduce at http://www.gandancing.com/archive/40.html
 
 在线测试地址
 ==========
-	* 新增了jsmips的branch，可以让它在[浏览器中运行](http://jannson.github.io/vxworks)
-	[jsmips](https://github.com/jannson/jsmips)是一个可以在浏览器当中运行的mips虚拟机。
+
+  * 新增了jsmips的branch，可以让它在[浏览器中运行](http://jannson.github.io/vxworks)
+  [jsmips](https://github.com/jannson/jsmips)是一个可以在浏览器当中运行的mips虚拟机。
 
 Main Discription
 ===
