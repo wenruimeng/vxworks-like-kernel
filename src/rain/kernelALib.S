@@ -252,6 +252,7 @@ idle:
 	li	t0, 1					/* load idle flag to reg */
 	NOPS
 	mtc0	t2, C0_SR			/* UNLOCK INTERRUPTS */
+	NOPS
 	sw	t0, kernelIsIdle		/* set idle flag for spyLib */
 idleLoop:
 	lw	t1, workQIsEmpty		/* if work queue is still empty */

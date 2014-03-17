@@ -35,6 +35,7 @@ VPATH	= $(SRCDIR)
 
 IMAGE_ELF = ${BUILD_PATH}/$(IMAGENAME).elf
 IMAGE_BIN = ${BUILD_PATH}/$(IMAGENAME).bin
+IMAGE_SREC = ${BUILD_PATH}/$(IMAGENAME).srec
 MAP       = ${BUILD_PATH}/$(IMAGENAME).map
 
 
@@ -43,7 +44,7 @@ INCLUDE   = -I$(INCDIR)/lib -I$(INCDIR)/arch/mips -I$(INCDIR)/board/gxemul -I$(I
             -I$(INCDIR)/board/gxemul -I$(INCDIR)/arch  -I$(INCDIR)/board -I$(INCDIR) 
 
 W_OPTS    = -Wimplicit -Wformat
-CC_OPTS   = -g -c -G0 -$(ENDIAN) $(INCLUDE) -D$(ENDIAN) -mips32 -fno-builtin $(W_OPTS)
+CC_OPTS   = -O2 -c -G0 -$(ENDIAN) $(INCLUDE) -D$(ENDIAN) -mips32 -mabi=32 -fno-builtin $(W_OPTS)
 CC_OPTS_A = $(CC_OPTS) -D_ASSEMBLER_
 
 LD_SCRIPT = $(ROOT)/build/link.xn
@@ -69,6 +70,7 @@ all : $(IMAGE_BIN)
 
 $(IMAGE_BIN) : $(IMAGE_ELF)
 	$(OBJCOPY) -O binary $(IMAGE_ELF) $(IMAGE_BIN)
+	$(OBJCOPY) -O srec $(IMAGE_ELF) $(IMAGE_SREC)
 
 $(IMAGE_ELF) : $(OBJ)
 	$(LD) $(LD_OPTS) $(OBJ) $(KERNEL_LIB)
@@ -90,6 +92,7 @@ clean :
 	rm -f *.map
 	rm -f *.elf
 	rm -f *.bin
+	rm -f *.srec
 	
 discclean :
 	rm -f *.o

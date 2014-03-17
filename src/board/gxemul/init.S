@@ -16,27 +16,15 @@
 *   Startup code for RAM application over TMON.                           *
 *                                                                         *
 **************************************************************************/
+
+/* Updated by jannson copy and modify from uC/OS-II */
+
 #include "sysdefs.h"
 #include "mips.h"
 #include "archdefs.h"
 #include "frmwrk.h"
 
 	
-/* ********************************************************************* */
-/* Global definitions */
-
-
-/* ********************************************************************* */
-/* File local definitions */
-
-
-/* ********************************************************************* */
-/* Local functions */
-
-
-/* ********************************************************************* */
-/* Global functions */
-
       .text
 
 /*

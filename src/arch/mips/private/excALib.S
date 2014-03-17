@@ -138,6 +138,7 @@ excIntStubCommonExit:
 	and k1, AT
 	/*or k1, M_StatusEXL*/
 	mtc0 k1, C0_SR
+	NOPS
 
 	lui AT, %hi(intPrioTable+4)
 	addu AT, t1
@@ -224,3 +225,18 @@ intSRSet:
 	NOPS
 	j ra
 	.end intSRSet
+
+/*
+	.globl timerInit
+	.ent timerInit
+timerInit:
+	li a0, 666666
+	mtc0 a0, C0_COMPARE
+	NOPS
+	li a0, 0
+	mtc0 a0, C0_COUNT
+	NOPS
+	j ra
+	.end timerInit
+*/
+

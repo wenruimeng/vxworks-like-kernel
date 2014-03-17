@@ -86,6 +86,8 @@ void kernelStart(char* pMemPoolStart, unsigned memPoolSize)
 	
 	CONSOL_Init(__nConsolBaud, 0);
 
+    CONSOL_Printf("test print\n");
+
 	memPartLibInit(pMemPoolStart, memPoolSize);
 
 	excVecInit();
@@ -97,11 +99,13 @@ void kernelStart(char* pMemPoolStart, unsigned memPoolSize)
 	
 	__vLogo();
 
+    taskDelay(1);
+
 	CONSOL_Printf("kernelStart pMemPoolStart:0x%x memPoolSize:0x%x\n", pMemPoolStart, memPoolSize);
 	CONSOL_Printf("---------SHELL START---------\n--> ");
 
 	{
-		demo(10);
+		demo(4);
 	}
 
 	/*{
@@ -120,9 +124,9 @@ void kernelStart(char* pMemPoolStart, unsigned memPoolSize)
 		s7_inversion();
 	}*/
 
-	{
+	/*{
 		s7_inversion2();
-	}
+	}*/
 
 	/* TODO for shell
        TODO for taskShow semShow msgQShow and so on.
@@ -151,7 +155,7 @@ void kernelStart(char* pMemPoolStart, unsigned memPoolSize)
 					CONSOL_SendChar(key);
 				}
 			}
-			taskDelay(120);
+			taskDelay(30);
 		}
 	}
 

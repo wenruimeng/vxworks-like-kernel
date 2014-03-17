@@ -16,6 +16,8 @@
 #define TASK_HIGHPRI_TEXT	"Hello from the 'high priority' task"
 #define TASK_LOWPRI_TEXT	"Hello from the 'low priority' task"
 
+#define DELAY_COUNT 30
+
 
 /* typedefs */
 
@@ -165,7 +167,7 @@ static void taskHighPri
 		newMsg.buffer, newMsg.childLoopCount);
 #endif /* STATUS_INFO */
 
-	taskDelay(60);
+	taskDelay(DELAY_COUNT);
 	}
 }
 
@@ -198,7 +200,7 @@ static void taskLowPri
 	msg.childLoopCount = ix;
 	msg.buffer = TASK_LOWPRI_TEXT;
 	msgQSend (msgQId, (char *) &msg, MSG_SIZE, 0, MSG_PRI_NORMAL);
-	taskDelay (60);
+	taskDelay (DELAY_COUNT);
 	}
 
     taskResume (windDemoId);		/* wake up the windDemo task */

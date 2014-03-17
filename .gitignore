@@ -19,4 +19,5 @@
 rain.*
 z.txt
 depend.kernel
-
+tags
+cscope.*

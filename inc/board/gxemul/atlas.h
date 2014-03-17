@@ -126,7 +126,8 @@
 #define ATLAS_TMRA_BASE           	0x14000040
 /* #define PIT_CLOCK 					1193182 */
 
-#define ATLAS_TI16C550_BASE			0x140003f8
+/*#define ATLAS_TI16C550_BASE			0x140003f8*/
+#define	ATLAS_TI16C550_BASE			0x1f000900
 
 
 

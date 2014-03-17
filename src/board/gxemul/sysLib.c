@@ -79,13 +79,40 @@ static void dummyISR(int vec)
     return;
 }
 
+static void timerReset() {
+    unsigned int count = 333332;
+    asm volatile("mtc0 %0, $11" : : "r" (count));
+    asm volatile("nop; nop; nop; nop;");
+
+    count = 0;
+    asm volatile("mtc0 %0, $9" : : "r" (count));
+    asm volatile("nop; nop; nop; nop;");
+}
+
 void sysClkInt()
 {
 	(*sysClkRoutine)(0);
+    
+    timerReset();
 }
 
 /*extern int bTest;
 extern SEM_ID bSemTest;*/
+
+static void putc(char c) {
+    volatile unsigned char* r = (volatile unsigned char*)(0xbf000900+5);
+    volatile unsigned char* w = (volatile unsigned char*)(0xbf000900);
+
+    while(*r == 0);
+    *w = c;
+}
+
+static void print(char * s){
+    while(*s != '\0') {
+        putc(*s);
+        s++;
+    }
+}
 
 static void sharedInt0()
 {
@@ -126,7 +153,7 @@ static void sharedInt0()
 	
 	bTest++;
 	semGive(bSemTest); */
-
+#if 0
 	FUNCTION  intVec;
     int      idx;
     int irq;
@@ -182,7 +209,7 @@ static void sharedInt0()
 			intUnlock(ikey);
 		}
 	}
-
+#endif
 }
 
 void sysHwInit2()
@@ -195,10 +222,12 @@ void sysHwInit2()
        intConnect(INUM_TO_IVEC(i), dummyISR, i);
     }
 
-	(void) intConnect (INUM_TO_IVEC(INT_VEC_IORQ0), sharedInt0, 0);
+	/* (void) intConnect (INUM_TO_IVEC(INT_VEC_IORQ0), sharedInt0, 0);
+	intConnect (INUM_TO_IVEC(IV_IORQ0_BIT0_VEC), sysClkInt, 0); */
 
-	intConnect (INUM_TO_IVEC(IV_IORQ0_BIT0_VEC), sysClkInt, 0);
-	
+    intConnect(INUM_TO_IVEC(INT_VEC_IORQ5), sysClkInt, 0);
+
+    timerReset();
 }
 
 STATUS sysClkConnect
@@ -222,6 +251,7 @@ STATUS sysClkConnect
 
 void sysClkDisable (void)
 {
+#if 0
     int oldLevel;
 
     if (sysClkRunning)
@@ -240,10 +270,13 @@ void sysClkDisable (void)
 
 		sysClkRunning = FALSE;
 	}
+#endif
+	sysClkRunning = FALSE;
 }
 
 void sysClkEnable (void)
 {
+#if 0
     UINT tc0;
     UINT tc2;
     int oldLevel;
@@ -270,6 +303,8 @@ void sysClkEnable (void)
 		
 		sysClkRunning = TRUE;
 	}
+#endif
+	sysClkRunning = TRUE;
 }
 
 

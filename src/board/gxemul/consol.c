@@ -74,6 +74,8 @@ void CONSOL_Init(U32 wBaud, U8 bFifoFlag)
     tunSU16 unBaud;
 
     __bFifoFlag = bFifoFlag;
+/* Not need for jsmips */
+#if 0
     __bFifoCnt = 0;
 
     unBaud.hwHW = 230400/wBaud;
@@ -122,6 +124,7 @@ void CONSOL_Init(U32 wBaud, U8 bFifoFlag)
 
     /* Clear interrupt bits */
     r16550INTEN = 0x00;
+#endif
 }
 
 /*

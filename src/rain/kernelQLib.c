@@ -18,7 +18,7 @@
 
 #define WIND_JOBS_MAX	64
 
-volatile BOOL workQIsEmpty = TRUE;	/* TRUE if it is empty */
+volatile BOOL workQIsEmpty;	/* TRUE if it is empty */
 volatile U8 workQReadIx;
 volatile U8 workQWriteIx;
 int pJobPool[WIND_JOBS_MAX * 4];

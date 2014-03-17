@@ -39,7 +39,7 @@ INCLUDE   = -I$(INCDIR)/lib -I$(INCDIR)/arch/mips -I$(INCDIR)/arch/mips/private 
             -I$(INCDIR)/board/gxemul -I$(INCDIR)/arch  -I$(INCDIR)/board -I$(INCDIR) 
 
 W_OPTS    = -Wimplicit -Wformat
-CC_OPTS   = -G0 -g -c -$(ENDIAN) $(INCLUDE) -D$(ENDIAN) -mips32 -fno-builtin $(W_OPTS) -DKERNEL
+CC_OPTS   = -O2 -G0 -c -$(ENDIAN) $(INCLUDE) -D$(ENDIAN) -mips32 -mabi=32 -fno-builtin $(W_OPTS) -DKERNEL
 CC_OPTS_A = $(CC_OPTS) -D_ASSEMBLER_
 
 # earlier it was -oformat instead of --oformat
