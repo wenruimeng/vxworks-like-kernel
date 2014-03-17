@@ -32,7 +32,7 @@ static void prioLow(void)
 static void prioMedium(void)
 {
 	int i;
-	taskDelay(20);
+	taskDelay(2);
 
 	for (i = 0; i < LONG_TIME * 10; i ++)
 	{
@@ -49,7 +49,7 @@ static void prioHigh(void)
 {
 	int i;
 	int j;
-	taskDelay(30);
+	taskDelay(3);
 
 	for (i = 0; i < ITER; i++)
 	{

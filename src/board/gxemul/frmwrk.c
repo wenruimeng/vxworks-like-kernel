@@ -102,7 +102,6 @@ void kernelStart(char* pMemPoolStart, unsigned memPoolSize)
     taskDelay(1);
 
 	CONSOL_Printf("kernelStart pMemPoolStart:0x%x memPoolSize:0x%x\n", pMemPoolStart, memPoolSize);
-	CONSOL_Printf("---------SHELL START---------\n--> ");
 
 	{
 		demo(4);
@@ -131,12 +130,13 @@ void kernelStart(char* pMemPoolStart, unsigned memPoolSize)
 	/* TODO for shell
        TODO for taskShow semShow msgQShow and so on.
 	*/
+	CONSOL_Printf("---------SHELL START---------\n--> ");
 	{
 		char key;
 		for(;;)
 		{
 			if(CONSOL_GetChar(&key) == True)
-	        {     
+	        {
 	            if(key == 0x1B)
 	            {
 					while(1);
@@ -155,7 +155,7 @@ void kernelStart(char* pMemPoolStart, unsigned memPoolSize)
 					CONSOL_SendChar(key);
 				}
 			}
-			taskDelay(30);
+			taskDelay(1);
 		}
 	}
 

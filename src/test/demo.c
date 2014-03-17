@@ -16,7 +16,7 @@
 #define TASK_HIGHPRI_TEXT	"Hello from the 'high priority' task"
 #define TASK_LOWPRI_TEXT	"Hello from the 'low priority' task"
 
-#define DELAY_COUNT 30
+#define DELAY_COUNT 3
 
 
 /* typedefs */
